@@ -5,10 +5,10 @@
         static void Main(string[] args)
         {
             string mode, mult = "x", sub = "-", add = "+", div = "/", squareRoot = "root", question, answer;
-            int number, venus = 1, mars = 2, jupiter = 3, saturn = 4, uranus = 5, neptune = 6, score;
-            double weight, result, number1, number2;
+            int number, venus = 1, mars = 2, jupiter = 3, saturn = 4, uranus = 5, neptune = 6;
+            double weight, result, number1, number2, score;
 
-            /*
+            
             //part 1
             Console.WriteLine("Do you want to know how much you weight on other planets?");
             Console.WriteLine("Then enter your earth weight below:");
@@ -80,7 +80,7 @@
             {
                 Console.WriteLine("Sorry, that's not an option");
             }
-            */
+            
             //part 3
             Console.WriteLine("Quiz Time");
             Console.WriteLine("Whats the capital of France?");
@@ -90,7 +90,8 @@
             score = 0;
             if (answer == question)
             {
-                Console.WriteLine("Correct", score + 1);
+                score = score + 1;
+                Console.WriteLine("Correct");
                 Console.WriteLine("Oui oui oui it is paris");
             }
             else
@@ -98,11 +99,12 @@
                 Console.WriteLine("Incorrect");
             }
 
-            Console.WriteLine("How many movies does star wars have");
+            Console.WriteLine("How many movies does star wars have?");
             answer = Console.ReadLine();
             question = "12";
             if (answer == question)
             {
+                score = score + 1;
                 Console.WriteLine("Correct", score + 1);
                 Console.WriteLine("They have had 12 major theatrical Star Wars movies");
             }
@@ -112,44 +114,51 @@
             }
         
             Console.WriteLine("True or False");
-            Console.WriteLine("Vincent van Gogh was famous while he was alive");
+            Console.WriteLine("Vincent van Gogh was famous while he was alive?");
             answer = Console.ReadLine();
             question = "False";
             if (answer == question)
             {
+                score = score + 1;
                 Console.WriteLine("Correct", score + 1);
-                Console.WriteLine("He lived a sad life and only become famous long after this death");
+                Console.WriteLine("He lived a sad life and only become famous long after this death.");
             }
             else
             {
                 Console.WriteLine("Incorrect");
-                Console.WriteLine("Sadly it was false he never knew he work become famous :(");
+                Console.WriteLine("Sadly it was false he never knew he work become famous after his death");
             }
 
-            Console.WriteLine("Which Marvel character  is known for having cancer");
+            Console.WriteLine("Which Marvel character is known for having cancer");
             answer = Console.ReadLine();
             question = "Deadpool";
             if (answer == question)
             {
+                score = score + 1;
                 Console.WriteLine("Correct", score + 1);
-                Console.WriteLine("Deadpool may be unkillable but he still has major cancer");
+                Console.WriteLine("Deadpool may be unkillable but he still has major cancer?");
             }
             else
             {
                 Console.WriteLine("Incorrect");
-                Console.WriteLine("Sorry its not " + answer);
+                Console.WriteLine("Sorry it's not " + answer);
             }
 
             Console.WriteLine("Time to count up your score");
             if (score == 0)
             {
-                Console.WriteLine("Nice try random trivia just might not be your thing.");
+                Console.WriteLine("Nice try, random trivia just might not be your thing.");
                 Console.WriteLine("You scored 0%");
             }
-            else if (score == 4) 
+            else if (score == 4)
             {
-                Console.WriteLine("Way to go, you seem to be great at random trivia, it might be your thing.");
-
+                Console.WriteLine("Congratulations, you seem to be great at random trivia, you got every question right.");
+                Console.WriteLine("You scored 100%");
+            }
+            else
+            {
+                Console.WriteLine("Way to go, you got " + score + " question right, That a score of " + (score / 4 * 100) + "%.");
+            }
         }
     }
 }
